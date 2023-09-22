@@ -6,6 +6,9 @@
     "prod_uri": "mysql://root:@localhost/staythere",
     "git_uri": "https://github.com/PiyushBagde",
     "blog_name": "Stay Here",
-    "tag_line":"A Blog Theme by Stay there"
+    "tag_line": "A Blog Theme by Stay there",
+    "gmail-user": "iamnotspare@gmail.com",
+    "gmail-password": "Piyush@spare"
+
   }
 }

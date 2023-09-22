@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import json
+from flask_mail import Mail
 
 
 with open("templates/config.json", 'r') as c:
@@ -11,6 +12,17 @@ local_server = True
 
 app = Flask(__name__)
 
+app.config.update(
+    # MAIL_SERVER='smtp.gmail.com',
+    # MAIL_PORT='465',
+    # MAIL_USE_SSL=True,
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT='465',
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME=params["gmail-user"],
+    MAIL_PASSWORD=params["gmail-password"]
+)
+mail = Mail(app)
 if local_server:
     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
 else:
@@ -59,6 +71,20 @@ def contact():
         entry = Contacts(name=name, phone_num=phone, message=message, email=email, date=datetime.now())
         db.session.add(entry)
         db.session.commit()
+        # mail.send_message('New message from ' + name,
+        #                   sender=email,
+        #                   recipients=[params["gmail-user"]],
+        #                   body=message + "\n" + phone
+        #                   )
+
+        try:
+            mail.send_message('New message from ' + name,
+                              sender=email,
+                              recipients=[params["gmail-user"]],
+                              body=message + "\n" + phone
+                              )
+        except Exception as e:
+            print(e)
 
     return render_template('contact.html', params=params)
 
