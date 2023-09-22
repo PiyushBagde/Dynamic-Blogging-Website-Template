@@ -1,0 +1,11 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/staythere",
+    "prod_uri": "mysql://root:@localhost/staythere",
+    "git_uri": "https://github.com/PiyushBagde",
+    "blog_name": "Stay Here",
+    "tag_line":"A Blog Theme by Stay there"
+  }
+}
