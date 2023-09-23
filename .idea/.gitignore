@@ -6,3 +6,7 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+# files to be ignored
+/misc.xml
+/flaskProject.iml
