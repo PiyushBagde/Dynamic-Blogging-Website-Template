@@ -68,11 +68,6 @@ def contact():
         entry = Contacts(name=name, phone_num=phone, message=message, email=email, date=datetime.now())
         db.session.add(entry)
         db.session.commit()
-        # mail.send_message('New message from ' + name,
-        #                   sender=email,
-        #                   recipients=[params["gmail-user"]],
-        #                   body=message + "\n" + phone
-        #                   )
 
         try:
             mail.send_message('New message from ' + name,
