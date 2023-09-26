@@ -21,25 +21,25 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
 
-                    {% for item in navigation %}
-                        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-                    {% endfor %}
-
+                    {% for post in posts %}
                     <div class="post-preview">
-                        <a href="/post">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                            <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
+                        <a href="/post/{{ post.slug }}">
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <h3 class="post-subtitle">{{ post.tagline }}</h3>
                         </a>
                         <p class="post-meta">
-                            Posted by
-                            <a href="#!">Do you want to start?</a>
-                            on September 24, 2023
+                            Posted by ADMIN
+                            <a href="#!"></a>
+                            on {{ post.date }}
                         </p>
+                    {{ post.content[0:50] }}...
                     </div>
+                        <hr class="my-4" />
+                    {% endfor %}
 
 
                     <!-- Divider-->
-                    <hr class="my-4" />
+
 
                     <!-- Post preview-->
 
