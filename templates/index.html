@@ -20,6 +20,11 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
+
+                    {% for item in navigation %}
+                        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+                    {% endfor %}
+
                     <div class="post-preview">
                         <a href="/post">
                             <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>

@@ -4,7 +4,6 @@ from datetime import datetime
 import json
 from flask_mail import Mail
 
-
 with open("templates/config.json", 'r') as c:
     params = json.load(c)["params"]
 
@@ -25,10 +24,7 @@ if local_server:
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = params['prod_uri']
 
-
 db = SQLAlchemy(app)
-
-
 
 
 class Contacts(db.Model):
@@ -41,8 +37,19 @@ class Contacts(db.Model):
     email = db.Column(db.String(20), nullable=False)
 
 
+# sno, title, content, date, slug
+class Posts(db.Model):
+    # sno, title, content, date, slug
+    sno = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(80), nullable=False)
+    content = db.Column(db.String(120), nullable=False)
+    img_file = db.Column(db.String(12), nullable=True)
+    date = db.Column(db.String(12), nullable=True)
+    slug = db.Column(db.String(21), nullable=False)
+
+
 @app.route('/')
-def home():  # put application's code here
+def home():
     return render_template('index.html', params=params)
 
 
@@ -51,9 +58,10 @@ def about():
     return render_template('about.html', params=params)
 
 
-@app.route('/post')
-def post():  # put application's code here
-    return render_template('post.html', params=params)
+@app.route("/post/<string:post_slug>", methods=['GET'])
+def post_route(post_slug):
+    post = Posts.query.filter_by(slug=post_slug).first()
+    return render_template('post.html', params=params, post=post)
 
 
 @app.route("/contact", methods=['GET', 'POST'])
