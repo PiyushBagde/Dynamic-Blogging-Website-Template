@@ -67,18 +67,36 @@ def dashboard():
         posts = Posts.query.all()
         return render_template('dashboard.html', params=params, posts=posts)
 
-
-    if request.method=='POST':
+    if request.method == 'POST':
         # redirect to admin
         username = request.form.get('uname')
         userpass = request.form.get('pass')
 
-        if( username == params["admin_username"] and userpass == params["admin_password"]):
+        if (username == params["admin_username"] and userpass == params["admin_password"]):
             session['user'] = username
             posts = Posts.query.all()
-            return render_template('dashboard.html', params=params, posts = posts)
+            return render_template('dashboard.html', params=params, posts=posts)
 
     return render_template('login.html', params=params)
+
+
+@app.route("/edit/<string:sno>", methods=['GET', 'POST'])
+def edit(sno):
+    if ('user' in session and session['user'] == params["admin_username"]):
+        if request.method == 'POST':
+            box_title = request.form.get('title')
+            tline = request.form.get('tline')
+            slug = request.form.get('slug')
+            content = request.form.get('content')
+            img_file = request.form.get('img_file')
+            date = datetime.now()
+
+            if sno == 0:
+                post = Posts(title=box_title, slug=slug, content=content, tagline=tline, img_file=img_file,
+                             date=date)
+                db.session.add(post)
+                db.session.commit()
+        return render_template("edit.html", params=params, sno=sno)
 
 
 @app.route("/post/<string:post_slug>", methods=['GET'])

@@ -39,15 +39,14 @@
       <td>{{ post.sno }}</td>
       <td>{{ post.title }}</td>
       <td>{{ post.date }}</td>
-      <td><button class="btn btn-primary" >Edit</button></td>
+        <td><a href="/edit/{{ post.sno }}"><button class="btn btn-primary" >Edit</button></a></td>
       <td><button class="btn btn-primary" >Delete</button></td>
     </tr>
   {% endfor %}
   </tbody>
 </table>
-
-                </div>
-            </div>
         </div>
+    </div>
+</div>
         <!-- Footer-->
 {% endblock %}
