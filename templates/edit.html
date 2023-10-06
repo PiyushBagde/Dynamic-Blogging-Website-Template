@@ -1,74 +1,74 @@
 {% extends "layout.html" %}
 {% block body %}
 
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url(' {{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading">
-                            <h1>Admin Panel</h1>
-                            <span class="subheading">Manage your posts here</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- Main Content-->
+<!-- Page Header-->
+<header class="masthead" style="background-image: url(' {{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+          <h1>Admin Panel</h1>
+          <span class="subheading">Manage your posts here</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Main Content-->
 
 <div class="container px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-md-10 col-lg-8 col-xl-7">
-        <h1>Add / Edit Post</h1>
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7">
+      <h1>Add / Edit Post</h1>
 
-<form name="sentMessage" action="/edit/{{sno}}" method="post" id="contactForm" novalidate>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <label>title</label>
-                <input type="text" class="form-control" placeholder="add title" name="title" id="title" >
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <label>tag-line</label>
-                <input type="text" class="form-control" placeholder="add tag-line" name="tline" id="tline" >
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group col-xs-12 floating-label-form-group controls">
-                <label>slug</label>
-                <input type="text" class="form-control" placeholder="add slug" name="slug" id="slug" >
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <label>content</label>
-                <textarea rows="5" class="form-control" placeholder="add content" name="content" id="content" ></textarea>
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-
-    <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <label>image file</label>
-                  <input type="text" class="form-control" placeholder="add image file" name="img_file" id="img_file">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-
-
-            <br>
-            <div id="success"></div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
-            </div>
-          </form>
-
+      <form name="sentMessage" action="/edit/{{sno}}" method="post" id="contactForm" novalidate>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>title</label>
+            <input type="text" class="form-control" placeholder="add title" name="title" id="title">
+            <p class="help-block text-danger"></p>
+          </div>
         </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>tag-line</label>
+            <input type="text" class="form-control" placeholder="add tag-line" name="tline" id="tline">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>slug</label>
+            <input type="text" class="form-control" placeholder="add slug" name="slug" id="slug">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>content</label>
+            <textarea rows="5" class="form-control" placeholder="add content" name="content" id="content"></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>image file</label>
+            <input type="text" class="form-control" placeholder="add image file" name="img_file" id="img_file">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+
+
+        <br>
+        <div id="success"></div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+        </div>
+      </form>
+
     </div>
+  </div>
 </div>
-        <!-- Footer-->
+<!-- Footer-->
 {% endblock %}

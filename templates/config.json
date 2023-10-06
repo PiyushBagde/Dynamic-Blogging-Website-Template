@@ -1,18 +1,17 @@
 {
-  "params":
-  {
-    "local_server": "True",
-    "local_uri": "mysql://root:@localhost/staythere",
-    "prod_uri": "mysql://root:@localhost/staythere",
-    "git_uri": "https://github.com/PiyushBagde",
-    "blog_name": "Stay Here",
-    "tag_line": "A Blog Theme by Stay there",
-    "gmail-user": "iamnotspare@gmail.com",
-    "gmail-password": "Piyush@spare",
-    "about-me": "Hello there! Working on my skills and listening to the music is all what i am doing right now.",
-    "no_of_posts": 3,
-    "login_image": "login.png",
-    "admin_username": "admin",
-    "admin_password": "password"
-  }
+	"params": {
+		"local_server": "True",
+		"local_uri": "mysql://root:@localhost/staythere",
+		"prod_uri": "mysql://root:@localhost/staythere",
+		"git_uri": "https://github.com/PiyushBagde",
+		"blog_name": "Stay Here",
+		"tag_line": "A Blog Theme by Stay there",
+		"gmail-user": "iamnotspare@gmail.com",
+		"gmail-password": "Piyush@spare",
+		"about-me": "Hello there! Working on my skills and listening to the music is all what i am doing right now.",
+		"no_of_posts": 3,
+		"login_image": "login.png",
+		"admin_username": "admin",
+		"admin_password": "password"
+	}
 }
