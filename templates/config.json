@@ -12,6 +12,7 @@
 		"no_of_posts": 3,
 		"login_image": "login.png",
 		"admin_user": "admin",
-		"admin_password": "password"
+		"admin_password": "password",
+		"upload_location": "C:\\Users\\piyus\\Desktop\\Workspace\\flaskProject\\static"
 	}
 }

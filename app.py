@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import json
 from flask_mail import Mail
+import os
+from werkzeug.utils import secure_filename
 
 with open("templates/config.json", 'r') as c:
     params = json.load(c)["params"]
@@ -19,6 +21,9 @@ app.config.update(
     MAIL_USERNAME=params["gmail-user"],
     MAIL_PASSWORD=params["gmail-password"]
 )
+
+app.config['UPLOAD_FOLDER'] = params['upload_location']
+
 mail = Mail(app)
 if local_server:
     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
@@ -59,6 +64,15 @@ def home():
 @app.route('/about')
 def about():
     return render_template('about.html', params=params)
+
+
+@app.route('/uploader', methods=['GET', 'POST'])
+def uploader():
+    if "user" in session and session['user']==params['admin_user']:
+        if request.method=='POST':
+            f = request.files['file1']
+            f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
+            return "Uploaded successfully!"
 
 
 @app.route('/dashboard', methods=['GET', 'POST'])
@@ -105,8 +119,8 @@ def edit(sno):
                 img_file = img_file
                 date = date
                 db.session.commit()
-                return redirect("/edit/"+sno)
-        post = Posts.query.filter_by(sno = sno).first()
+                return redirect("/edit/" + sno)
+        post = Posts.query.filter_by(sno=sno).first()
         return render_template("edit.html", params=params, post=post)
 
 
