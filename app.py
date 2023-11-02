@@ -65,6 +65,11 @@ def home():
 def about():
     return render_template('about.html', params=params)
 
+@app.route('/logout')
+def logout():
+    session.pop('user')
+    return redirect('/dashboard')
+
 
 @app.route('/uploader', methods=['GET', 'POST'])
 def uploader():
