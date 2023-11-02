@@ -21,32 +21,32 @@
     <div class="col-md-10 col-lg-8 col-xl-7">
       <h1>Add / Edit Post</h1>
 
-      <form name="sentMessage" action="/edit/{{sno}}" method="post" id="contactForm" novalidate>
+      <form name="sentMessage" action="/edit/{{post.sno}}" method="post" id="contactForm" novalidate>
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
             <label>title</label>
-            <input type="text" class="form-control" placeholder="add title" name="title" id="title">
+            <input type="text" class="form-control" placeholder="add title" name="title" id="title" value="{{ post.title }}">
             <p class="help-block text-danger"></p>
           </div>
         </div>
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
             <label>tag-line</label>
-            <input type="text" class="form-control" placeholder="add tag-line" name="tline" id="tline">
+            <input type="text" class="form-control" placeholder="add tag-line" name="tline" id="tline" value="{{ post.tagline }}">
             <p class="help-block text-danger"></p>
           </div>
         </div>
         <div class="control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>slug</label>
-            <input type="text" class="form-control" placeholder="add slug" name="slug" id="slug">
+            <input type="text" class="form-control" placeholder="add slug" name="slug" id="slug" value="{{ post.slug }}">
             <p class="help-block text-danger"></p>
           </div>
         </div>
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
             <label>content</label>
-            <textarea rows="5" class="form-control" placeholder="add content" name="content" id="content"></textarea>
+            <textarea rows="5" class="form-control" placeholder="add content" name="content" id="content">{{ post.content }}</textarea>
             <p class="help-block text-danger"></p>
           </div>
         </div>
@@ -54,7 +54,7 @@
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
             <label>image file</label>
-            <input type="text" class="form-control" placeholder="add image file" name="img_file" id="img_file">
+            <input type="text" class="form-control" placeholder="add image file" name="img_file" id="img_file" value="{{ post.img_file }}">
             <p class="help-block text-danger"></p>
           </div>
         </div>
