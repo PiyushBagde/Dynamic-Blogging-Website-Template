@@ -38,14 +38,13 @@
             {% endfor %}
 
 
-            <!-- Divider-->
-
-
-            <!-- Post preview-->
-
             <!-- Pager-->
-            <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts
-                    →</a></div>
+            <div class="clearfix">
+                <a class="btn btn-primary float-left" href="{{ prev }}">Previous&lArr;</a>
+                <a class="btn btn-primary text-uppercase float-right newer" href="{{ next }}">Next&rArr;</a>
+            </div>
+
+
         </div>
     </div>
 </div>
