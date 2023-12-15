@@ -66,10 +66,4 @@ This project is a Flask-based template for a dynamic blogging website. It suppor
 ![img.png](static/assets/img/EDIT existing.png)
 
 
-
-<<<<<<< HEAD
-=======
-This is a simple dynamic blogging website built with Flask. It allows users to create and publish blog posts, as well as read other users' posts.
-
-Check it out : http://piyushbagde.pythonanywhere.com/
->>>>>>> 8626c87179fc3adc5ee91f1888dc69fa11cfd6d8
+**Check it out here :**  http://piyushbagde.pythonanywhere.com/
