@@ -60,10 +60,10 @@ This project is a Flask-based template for a dynamic blogging website. It suppor
 ![img.png](static/assets/img/ACTIONS.png)
 
 * ADD post
-![img.png](static/assets/img/ADD post.png)
+![img.png](static/assets/img/ADDpost.png)
 
 * EDIT existing
-![img.png](static/assets/img/EDIT existing.png)
+![img.png](static/assets/img/EDITexisting.png)
 
 
 **Check it out here :**  http://piyushbagde.pythonanywhere.com/
