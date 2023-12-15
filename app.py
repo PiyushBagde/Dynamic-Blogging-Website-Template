@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request, session, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import json
@@ -187,7 +187,7 @@ def contact():
                               )
         except Exception as e:
             print(e)
-
+    flash("Details submitted..!")
     return render_template('contact.html', params=params)
 
 
